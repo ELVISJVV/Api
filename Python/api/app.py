@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import SQLAlchemyError
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) # Habilitar CORS para todas las rutas
 
 # Configuración de la conexión a PostgreSQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://admin:admin@localhost/api1'
